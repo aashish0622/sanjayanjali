@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanjay ❤️ Anjali | Wedding Invitation</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-color: #fffaf0;
+    text-align: center;
+    color: #222;
+}
+
+header {
+    background: linear-gradient(to right, #000, #444);
+    color: gold;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+h2 {
+    color: #b8860b;
+}
+
+.section {
+    padding: 50px 20px;
+}
+
+.card {
+    background: white;
+    max-width: 700px;
+    margin: auto;
+    padding: 30px;
+    border: 3px solid black;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+}
+
+.names {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    margin: 20px 0;
+}
+
+.countdown {
+    font-size: 24px;
+    color: #b22222;
+    margin-top: 20px;
+}
+
+button {
+    background: black;
+    color: gold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: gold;
+    color: black;
+}
+
+footer {
+    background: black;
+    color: gold;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🕉 Wedding Invitation 🕉</h1>
+    <p>With the blessings of our beloved parents</p>
+</header>
+
+<div class="section">
+    <div class="card">
+        <h2>Together With Their Families</h2>
+        <div class="names">Sanjay Kumar ❤️ Anjali Kumari</div>
+        <p>Request the honour of your presence</p>
+        <p>at their wedding ceremony</p>
+
+        <h2>Wedding Day</h2>
+        <p><strong>Monday, 9 March 2026</strong></p>
+        <p>Daytime Ceremony</p>
+        <p>Suryakund Mandir, Barkattha</p>
+
+        <div class="countdown" id="countdown"></div>
+
+        <button onclick="openMap()">View Location</button>
+    </div>
+</div>
+
+<div class="section">
+    <div class="card">
+        <h2>Wedding Events</h2>
+
+        <p><strong>6 March 2026 (Friday)</strong><br>
+        Tilak Ceremony</p>
+
+        <p><strong>7 March 2026 (Saturday)</strong><br>
+        Lagan & Mandap Ceremony (Night)</p>
+
+        <p><strong>8 March 2026 (Sunday)</strong><br>
+        Haldi & Rituals</p>
+
+        <p><strong>9 March 2026 (Monday)</strong><br>
+        Wedding Ceremony</p>
+
+        <p><strong>14 March 2026 (Saturday)</strong><br>
+        Reception & Dinner (From 7 PM)</p>
+
+    </div>
+</div>
+
+<footer>
+    <p>We look forward to celebrating with you 👨‍👩‍👧‍👦</p>
+</footer>
+
+<script>
+// Countdown Timer
+var weddingDate = new Date("March 9, 2026 00:00:00").getTime();
+
+var x = setInterval(function() {
+
+var now = new Date().getTime();
+var distance = weddingDate - now;
+
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+document.getElementById("countdown").innerHTML =
+days + " Days Left Until Our Wedding 💍";
+
+if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "We Are Married ❤️";
+}
+
+}, 1000);
+
+// Google Map
+function openMap() {
+    window.open("https://www.google.com/maps/search/Suryakund+Mandir+Barkattha");
+}
+</script>
+
+</body>
+</html>
