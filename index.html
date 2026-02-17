@@ -12,9 +12,32 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #ffe6f0, #fff5e6, #e6f7ff);
     text-align: center;
     color: #333;
+
+    /* Romantic Gradient Background */
+    background: linear-gradient(135deg, #ffdde1, #fbb1bd, #e0c3fc, #c2e9fb);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+}
+
+/* Animated Background */
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Soft Overlay Glow */
+body::before {
+    content: "";
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.4), transparent);
+    z-index: -1;
 }
 
 /* Header */
@@ -22,45 +45,44 @@ header {
     background: linear-gradient(to right, #8b0000, #ff1493);
     color: white;
     padding: 60px 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
 header h1 {
     font-family: 'Great Vibes', cursive;
-    font-size: 50px;
+    font-size: 52px;
     margin: 0;
 }
 
 header p {
     font-size: 18px;
-    margin-top: 10px;
 }
 
-/* Sections */
+/* Section */
 .section {
     padding: 60px 20px;
 }
 
-/* Card Design */
+/* Card */
 .card {
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.92);
     max-width: 750px;
     margin: auto;
     padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    backdrop-filter: blur(10px);
-    transition: 0.4s;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    backdrop-filter: blur(8px);
+    transition: 0.4s ease;
 }
 
 .card:hover {
-    transform: scale(1.02);
+    transform: translateY(-5px);
 }
 
-/* Names Styling */
+/* Names */
 .names {
     font-family: 'Great Vibes', cursive;
-    font-size: 40px;
+    font-size: 42px;
     color: #c2185b;
     margin: 25px 0;
     animation: glow 2s infinite alternate;
@@ -109,6 +131,7 @@ footer {
     color: white;
     padding: 25px;
     font-size: 16px;
+    margin-top: 40px;
 }
 
 </style>
@@ -166,14 +189,11 @@ footer {
 </footer>
 
 <script>
-// Countdown Timer
 var weddingDate = new Date("March 9, 2026 00:00:00").getTime();
 
 var x = setInterval(function() {
-
 var now = new Date().getTime();
 var distance = weddingDate - now;
-
 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
 document.getElementById("countdown").innerHTML =
@@ -183,10 +203,8 @@ if (distance < 0) {
     clearInterval(x);
     document.getElementById("countdown").innerHTML = "We Are Married ❤️";
 }
-
 }, 1000);
 
-// Google Map
 function openMap() {
     window.open("https://www.google.com/maps/search/Suryakund+Mandir+Barkattha");
 }
