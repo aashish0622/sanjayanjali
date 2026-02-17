@@ -5,78 +5,112 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sanjay ❤️ Anjali | Wedding Invitation</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
+
 body {
     margin: 0;
-    font-family: 'Georgia', serif;
-    background-color: #fffaf0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffe6f0, #fff5e6, #e6f7ff);
     text-align: center;
-    color: #222;
+    color: #333;
 }
 
+/* Header */
 header {
-    background: linear-gradient(to right, #000, #444);
-    color: gold;
-    padding: 40px 20px;
+    background: linear-gradient(to right, #8b0000, #ff1493);
+    color: white;
+    padding: 60px 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
-h1 {
-    font-size: 40px;
+header h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
     margin: 0;
 }
 
+header p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Sections */
+.section {
+    padding: 60px 20px;
+}
+
+/* Card Design */
+.card {
+    background: rgba(255,255,255,0.9);
+    max-width: 750px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Names Styling */
+.names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    color: #c2185b;
+    margin: 25px 0;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff99cc; }
+    to { text-shadow: 0 0 25px #ff1493; }
+}
+
+/* Headings */
 h2 {
     color: #b8860b;
+    margin-top: 30px;
 }
 
-.section {
-    padding: 50px 20px;
-}
-
-.card {
-    background: white;
-    max-width: 700px;
-    margin: auto;
-    padding: 30px;
-    border: 3px solid black;
-    border-radius: 15px;
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
-}
-
-.names {
-    font-size: 32px;
-    font-weight: bold;
-    color: #000;
-    margin: 20px 0;
-}
-
+/* Countdown */
 .countdown {
-    font-size: 24px;
-    color: #b22222;
-    margin-top: 20px;
+    font-size: 26px;
+    color: #d81b60;
+    margin-top: 25px;
+    font-weight: bold;
 }
 
+/* Button */
 button {
-    background: black;
-    color: gold;
-    padding: 12px 25px;
+    background: linear-gradient(to right, #ff1493, #8b0000);
+    color: white;
+    padding: 14px 28px;
     border: none;
-    border-radius: 25px;
+    border-radius: 30px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 20px;
+    margin-top: 25px;
+    transition: 0.3s;
 }
 
 button:hover {
-    background: gold;
-    color: black;
+    background: linear-gradient(to right, #ff69b4, #ff0000);
+    transform: scale(1.05);
 }
 
+/* Footer */
 footer {
-    background: black;
-    color: gold;
-    padding: 20px;
+    background: linear-gradient(to right, #8b0000, #ff1493);
+    color: white;
+    padding: 25px;
+    font-size: 16px;
 }
+
 </style>
 </head>
 
@@ -101,13 +135,13 @@ footer {
 
         <div class="countdown" id="countdown"></div>
 
-        <button onclick="openMap()">View Location</button>
+        <button onclick="openMap()">View Location 📍</button>
     </div>
 </div>
 
 <div class="section">
     <div class="card">
-        <h2>Wedding Events</h2>
+        <h2>💐 Wedding Events 💐</h2>
 
         <p><strong>6 March 2026 (Friday)</strong><br>
         Tilak Ceremony</p>
@@ -143,7 +177,7 @@ var distance = weddingDate - now;
 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
 document.getElementById("countdown").innerHTML =
-days + " Days Left Until Our Wedding 💍";
+"💖 " + days + " Days Left Until Our Wedding 💍";
 
 if (distance < 0) {
     clearInterval(x);
