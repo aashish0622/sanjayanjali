@@ -15,6 +15,37 @@ body {
     background: linear-gradient(135deg, #ffdde1, #ee9ca7);
     text-align: center;
     color: #4a0033;
+    overflow-x: hidden;
+}
+
+/* Floating Hearts Background */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hearts span {
+    position: absolute;
+    bottom: -50px;
+    font-size: 20px;
+    animation: float 10s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+    }
 }
 
 /* Header */
@@ -22,6 +53,8 @@ header {
     background: linear-gradient(to right, #8e2de2, #ff6a88);
     color: white;
     padding: 40px 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .main-title {
@@ -38,6 +71,8 @@ header {
 
 .section {
     padding: 40px 15px;
+    position: relative;
+    z-index: 1;
 }
 
 /* Card */
@@ -104,6 +139,8 @@ footer {
     color: white;
     padding: 20px;
     margin-top: 30px;
+    position: relative;
+    z-index: 1;
 }
 
 /* Mobile Friendly */
@@ -111,7 +148,6 @@ footer {
     .names {
         font-size: 24px;
     }
-
     .main-title {
         font-size: 40px;
     }
@@ -121,6 +157,9 @@ footer {
 
 <body>
 
+<!-- Floating Hearts Container -->
+<div class="hearts" id="hearts"></div>
+
 <header>
     <div class="main-title">
         <span>🕉Wedding🕉</span>
@@ -129,7 +168,6 @@ footer {
     <p>With the blessings of our beloved parents</p>
 </header>
 
-<!-- Main Section -->
 <div class="section">
     <div class="card">
         <h2>Together With Their Families</h2>
@@ -154,26 +192,14 @@ footer {
     </div>
 </div>
 
-<!-- Events Section -->
 <div class="section">
     <div class="card">
         <h2>Wedding Events</h2>
-
-        <p><strong>6 March 2026 (Friday)</strong><br>
-        Tilak Ceremony</p>
-
-        <p><strong>7 March 2026 (Saturday)</strong><br>
-        Lagan & Mandap Ceremony (Night)</p>
-
-        <p><strong>8 March 2026 (Sunday)</strong><br>
-        Haldi & Rituals</p>
-
-        <p><strong>9 March 2026 (Monday)</strong><br>
-        Wedding Ceremony</p>
-
-        <p><strong>14 March 2026 (Saturday)</strong><br>
-        Reception & Dinner (From 7 PM)</p>
-
+        <p><strong>6 March 2026 (Friday)</strong><br>Tilak Ceremony</p>
+        <p><strong>7 March 2026 (Saturday)</strong><br>Lagan & Mandap Ceremony (Night)</p>
+        <p><strong>8 March 2026 (Sunday)</strong><br>Haldi & Rituals</p>
+        <p><strong>9 March 2026 (Monday)</strong><br>Wedding Ceremony</p>
+        <p><strong>14 March 2026 (Saturday)</strong><br>Reception & Dinner (From 7 PM)</p>
     </div>
 </div>
 
@@ -187,13 +213,23 @@ footer {
 </audio>
 
 <script>
+// Generate Floating Hearts
+const heartsContainer = document.getElementById('hearts');
+for (let i = 0; i < 25; i++) {
+    let heart = document.createElement('span');
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 10) + "s";
+    heartsContainer.appendChild(heart);
+}
+
 // Countdown Timer
 var weddingDate = new Date("March 9, 2026 00:00:00").getTime();
 
 var x = setInterval(function() {
 var now = new Date().getTime();
 var distance = weddingDate - now;
-
 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
 document.getElementById("countdown").innerHTML =
