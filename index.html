@@ -57,20 +57,16 @@ body {
     margin: 25px 0;
 }
 
-.name-top {
+.name-top,
+.name-bottom {
     font-size: 34px;
     color: #b0003a;
 }
 
 .heart-center {
-    font-size: 36px;
+    font-size: 38px;
     color: red;
     animation: heartbeat 1.2s infinite;
-}
-
-.name-bottom {
-    font-size: 34px;
-    color: #b0003a;
 }
 
 @keyframes heartbeat {
@@ -79,6 +75,12 @@ body {
     50% { transform: scale(1); }
     75% { transform: scale(1.2); }
     100% { transform: scale(1); }
+}
+
+/* Section Heading */
+h2 {
+    color: #b8860b;
+    margin-top: 10px;
 }
 
 /* Countdown */
@@ -102,6 +104,12 @@ button {
     cursor: pointer;
 }
 
+/* Event Text */
+.event {
+    margin: 12px 0;
+    font-size: 15px;
+}
+
 footer {
     padding: 15px;
     font-size: 14px;
@@ -120,6 +128,7 @@ footer {
 
 <div class="container">
 
+<!-- Main Wedding Card -->
 <div class="card">
     <div class="title">🕉 Wedding Invitation 🕉</div>
     <p>With the blessings of our beloved parents</p>
@@ -132,12 +141,44 @@ footer {
 
     <p>Request the honour of your presence</p>
 
-    <h3>Monday, 9 March 2026</h3>
+    <h2>Wedding Day</h2>
+    <p><strong>Monday, 9 March 2026</strong></p>
     <p>Suryakund Mandir, Barkattha</p>
 
     <div class="countdown" id="countdown"></div>
 
     <button onclick="openMap()">📍 View Location</button>
+</div>
+
+<!-- Wedding Events Card -->
+<div class="card">
+    <h2>💐 Wedding Events 💐</h2>
+
+    <div class="event">
+        <strong>6 March 2026 (Friday)</strong><br>
+        Tilak Ceremony
+    </div>
+
+    <div class="event">
+        <strong>7 March 2026 (Saturday)</strong><br>
+        Lagan & Mandap Ceremony (Night)
+    </div>
+
+    <div class="event">
+        <strong>8 March 2026 (Sunday)</strong><br>
+        Haldi & Rituals
+    </div>
+
+    <div class="event">
+        <strong>9 March 2026 (Monday)</strong><br>
+        Wedding Ceremony
+    </div>
+
+    <div class="event">
+        <strong>14 March 2026 (Saturday)</strong><br>
+        Reception & Dinner (From 7 PM)
+    </div>
+
 </div>
 
 </div>
